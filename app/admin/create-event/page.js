@@ -27,7 +27,7 @@ export default function CreateEventPage() {
       return;
     }
     setSubmitting(true);
-    const res = await fetch('http://localhost:5000/event/create', {
+    const res = await fetch('https://em-backend-lpos.onrender.com/event/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, date, location, seats }),

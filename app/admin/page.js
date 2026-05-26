@@ -21,7 +21,7 @@ export default function AdminPage() {
   }, []);
 
   const fetchEvents = () => {
-    fetch('http://localhost:5000/events')
+    fetch('https://em-backend-lpos.onrender.com/events')
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
@@ -47,7 +47,7 @@ export default function AdminPage() {
   };
 
   const handleUpdate = async () => {
-    const res = await fetch(`http://localhost:5000/event/update/${editingEvent._id}`, {
+    const res = await fetch(`https://em-backend-lpos.onrender.com/event/update/${editingEvent._id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(editForm),
@@ -64,7 +64,7 @@ export default function AdminPage() {
 
   const handleDelete = async (eventId, eventName) => {
     if (!confirm(`Are you sure you want to delete "${eventName}"?`)) return;
-    const res = await fetch(`http://localhost:5000/event/delete/${eventId}`, {
+    const res = await fetch(`https://em-backend-lpos.onrender.com/event/delete/${eventId}`, {
       method: 'DELETE',
     });
     if (res.ok) {
