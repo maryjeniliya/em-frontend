@@ -27,7 +27,7 @@ function RegisterEventContent() {
       return;
     }
 
-    fetch('http://localhost:5000/events')
+    fetch('https://em-backend-lpos.onrender.com/events')
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((e) => e._id === eventId);
@@ -43,7 +43,7 @@ function RegisterEventContent() {
   const handleRegister = async () => {
     const user = JSON.parse(localStorage.getItem('user'));
     setSubmitting(true);
-    const res = await fetch('http://localhost:5000/event/register', {
+    const res = await fetch('https://em-backend-lpos.onrender.com/event/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user_id: user._id, event_id: eventId }),

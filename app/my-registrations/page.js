@@ -17,7 +17,7 @@ export default function MyRegistrationsPage() {
     }
 
     // Step 1: Get user's registration records
-    fetch(`http://localhost:5000/registrations/${user._id}`)
+    fetch(`https://em-backend-lpos.onrender.com/registrations/${user._id}`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch registrations');
         return res.json();
@@ -30,7 +30,7 @@ export default function MyRegistrationsPage() {
         }
 
         // Step 2: Fetch all events once, then match by event_id locally
-        const eventsRes = await fetch('http://localhost:5000/events');
+        const eventsRes = await fetch('https://em-backend-lpos.onrender.com/events');
         if (!eventsRes.ok) throw new Error('Failed to fetch events');
         const allEvents = await eventsRes.json();
 

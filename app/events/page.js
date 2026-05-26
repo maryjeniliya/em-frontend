@@ -15,7 +15,7 @@ export default function EventsPage() {
       return;
     }
 
-    fetch('http://localhost:5000/events')
+    fetch('https://em-backend-lpos.onrender.com/events')
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);

@@ -11,7 +11,7 @@ export default function RegisterPage() {
   const [message, setMessage] = useState('');
 
   const handleRegister = async () => {
-    const res = await fetch('http://localhost:5000/register', {
+    const res = await fetch('https://em-backend-lpos.onrender.com/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password }),
